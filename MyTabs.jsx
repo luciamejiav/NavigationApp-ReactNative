@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import SecondScreen from './screens/SecondScreen';
+import StackScreen from './screens/StackScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
@@ -18,12 +19,11 @@ function MyStacks(){
         component={HomeScreen}
       />
       <HomeStackNavigator.Screen 
-        name="Another" 
-        component={SecondScreen}
-      />
-      <HomeStackNavigator.Screen 
-        name="Settings" 
-        component={SettingsScreen}
+        name="Stack" 
+        component={StackScreen}
+        options={{
+          headerBackTitleVisible: false //quita el titulo que aparece al lado de la flecha de volver
+        }}
       />
     </HomeStackNavigator.Navigator>
   )
